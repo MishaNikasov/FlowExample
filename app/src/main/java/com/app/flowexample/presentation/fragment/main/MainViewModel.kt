@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val getPostListWithCommentsUseCase: GetPostListWithCommentsUseCase
+    getPostListWithCommentsUseCase: GetPostListWithCommentsUseCase
 ): BaseViewModel() {
 
    val postList = getPostListWithCommentsUseCase().stateIn(

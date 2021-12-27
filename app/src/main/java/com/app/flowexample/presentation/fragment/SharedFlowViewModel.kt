@@ -8,6 +8,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
+//TODO: check hash
 @HiltViewModel
 class SharedFlowViewModel @Inject constructor(
 
@@ -73,5 +74,7 @@ class SharedFlowViewModel @Inject constructor(
      * 2. Если эмитим после подписки то все работает как часы
      * 3. В этом случае мы указываем кол-во кэшируемых значений, и можем пихать значения до появления подписчика
      */
+
+    //TODO: check flow debounce
 
 }

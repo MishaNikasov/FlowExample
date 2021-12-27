@@ -62,7 +62,7 @@ class FlowViewModel : BaseViewModel() {
      * Холодный флоу можно превратить в горячий (двух типов)
      * операторами stateIn(); sharedIn() соответственно
      */
-    private val simpleStateFlow = flow {
+    val simpleStateFlow = flow {
         emit(3)
         delay(500)
         emit(10)

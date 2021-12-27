@@ -2,6 +2,9 @@ package com.app.flowexample.presentation.fragment
 
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.app.flowexample.R
 import com.app.flowexample.common.extensions.collectWhenStarted
@@ -9,11 +12,12 @@ import com.app.flowexample.common.extensions.showToast
 import com.app.flowexample.databinding.FragmentMainBinding
 import com.app.flowexample.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class TestFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
 
-//    private val viewModelSharedFlow: SharedFlowTestViewModel by viewModels()
+    private val viewModelSharedFlow: SharedFlowViewModel by viewModels()
     private val stateFlowViewModel: StateFlowViewModel by viewModels()
     private val flowViewModel: FlowViewModel by viewModels()
 
@@ -46,10 +50,12 @@ class TestFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
                 }
             }
         }
-//        with(viewModelSharedFlow) {}
-        with(flowViewModel) {
-
-        }
+        with(viewModelSharedFlow) {}
+//        with(flowViewModel) {
+//            simpleStateFlow.collectWhenStarted(this@TestFragment) {
+//
+//            }
+//        }
     }
 
     override fun loadingState(isLoading: Boolean) {

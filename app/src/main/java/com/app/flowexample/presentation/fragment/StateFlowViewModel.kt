@@ -17,7 +17,7 @@ class StateFlowViewModel @Inject constructor(
 ): BaseViewModel() {
 
     private val _stateFlowUi = MutableStateFlow<State<Event>>(State.loading())
-    val stateFlowUi = _stateFlowUi.asSharedFlow()
+    val stateFlowUi = _stateFlowUi.asStateFlow()
 
     fun sendStateEvent() {
         viewModelScope.launch {

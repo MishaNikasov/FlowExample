@@ -18,6 +18,6 @@
         android:label="SecondFragment" />
     <fragment
         android:id="@+id/thirdFragment"
-        android:name="com.app.flowexample.presentation.fragment.ThirdFragment"
+        android:name="com.app.flowexample.presentation.fragment.main.ThirdFragment"
         android:label="ThirdFragment" />
 </navigation>
